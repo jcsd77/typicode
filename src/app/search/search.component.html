@@ -1,0 +1,37 @@
+<h2 class="table-title" style="padding:10px">Info usuario</h2>
+
+<form [formGroup]="searchForm" style="padding:10px">
+    <div class="form-group">
+        <label for="companyname">Company Name</label>
+        <input type="text" formControlName="companyname" class="form-control" style="width:auto"/>
+    </div>
+    <div class="form-group">
+        <label for="catchPhrase">CatchPhrase</label>
+        <input type="text" formControlName="catchPhrase" class="form-control" style="width:auto" />
+    </div>
+    <div class="form-group">
+        <label for="bs">Bs</label>
+        <input type="text" formControlName="bs" class="form-control" style="width:auto" />
+    </div>
+    <div class="form-group">
+        <label for="street">Address Street</label>
+        <input type="text" formControlName="street" class="form-control" style="width:auto" />
+    </div>
+    <div class="form-group">
+        <label for="suite">Suite</label>
+        <input type="text" formControlName="suite" class="form-control" style="width:auto" />
+    </div>
+    <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" formControlName="city" class="form-control" style="width:auto" />
+    </div>
+    <div class="form-group">
+        <label for="zipcode">Zipcode</label>
+        <input type="text" formControlName="zipcode" class="form-control" style="width:auto" />
+    </div>
+
+    <div class="form-group">
+        <a routerLink="/home" class="btn btn-link">Cancel</a>
+    </div>
+</form>
+

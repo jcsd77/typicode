@@ -1,0 +1,284 @@
+.page-footer{
+    bottom: 0;
+    padding: 10px;
+}
+.header{
+    padding: 10px;
+    z-index: 10;
+}
+
+.navbar{
+   background-color: #0098d2 !important
+}
+
+.navbarHome{
+    padding: 0;
+    width: 100%;
+}
+
+#navigationMenu li{
+    list-style:none;
+    height:50px;
+    padding:2px;
+    width:40px;
+    margin-bottom: 20px;
+}
+
+#navigationMenu span{
+    /* Container properties */
+    width:0;
+    left:50px;
+    padding:0;
+    position:absolute;
+    overflow:hidden;
+
+    /* Text properties */
+    font-size:15px;
+    white-space:nowrap;
+    line-height:50px;
+
+    /* CSS3 Transition: */
+    -webkit-transition: 0.25s;
+
+    /* Future proofing (these do not work yet): */
+    -moz-transition: 0.25s;
+    transition: 0.25s;
+}
+
+#navigationMenu a{
+    /* The background sprite: */
+    height:50px;
+    width:50px;
+    display:block;
+    position:relative;
+}
+
+/* General hover styles */
+
+#navigationMenu a:hover span{ width:auto; padding:0 20px;overflow:visible; }
+#navigationMenu a:hover{
+    text-decoration:none;
+
+    /* CSS outer glow with the box-shadow property */
+    -moz-box-shadow:0 0 5px #9ddff5;
+    -webkit-box-shadow:0 0 5px #9ddff5;
+    box-shadow:0 0 5px #9ddff5;
+}
+
+#navigationMenu .normalOption { background-position:0 0;}
+#navigationMenu .normalOption:hover {   background-position:0 -50px;}
+#navigationMenu .normalOption span{
+    background-color:#5bc500;
+    color:white;
+    text-shadow:1px 1px 0 #5bc500;
+}
+
+#navigationMenu .logOut { background-position:0 0;}
+#navigationMenu .logOut:hover {   background-position:0 -50px;}
+#navigationMenu .logOut span{
+    background-color:#ff374a;
+    color:white;
+    text-shadow:1px 1px 0 #ff374a;
+}
+
+
+#navigationMenu .home { background-position:0 0;}
+#navigationMenu .home:hover {   background-position:0 -50px;}
+#navigationMenu .home span{
+    background-color:#7da315;
+    color:white;
+    text-shadow:1px 1px 0 #99bf31;
+}
+
+#navigationMenu .users { background-position:-38px 0;}
+#navigationMenu .users:hover {   background-position:-38px -50px;}
+#navigationMenu .users span{
+    background-color:#3f51b5;
+    color:white;
+    text-shadow:1px 1px 0 #3f51b5;
+}
+
+/* Blue Button */
+
+#navigationMenu .about { background-position:-76px 0;}
+#navigationMenu .about:hover { background-position:-76px -50px;}
+#navigationMenu .about span{
+    background-color:#1e8bb4;
+    color:white;
+    text-shadow:1px 1px 0 #44a8d0;
+}
+
+/* Orange Button */
+
+#navigationMenu .services { background-position:-114px 0;}
+#navigationMenu .services:hover { background-position:-114px -50px;}
+#navigationMenu .services span{
+    background-color:#c86c1f;
+    color:white;
+    text-shadow:1px 1px 0 #d28344;
+}
+
+/* Yellow Button */
+
+#navigationMenu .portfolio { background-position:-152px 0;}
+#navigationMenu .portfolio:hover{ background-position:-152px -50px;}
+#navigationMenu .portfolio span{
+    background-color:#d0a525;
+    color:white;
+    text-shadow:1px 1px 0 #d8b54b;
+}
+
+/* Purple Button */
+
+#navigationMenu .contact { background-position:-190px 0;}
+#navigationMenu .contact:hover { background-position:-190px -50px;}
+#navigationMenu .contact span{
+    background-color:#af1e83;
+    color:white;
+    text-shadow:1px 1px 0 #d244a6;
+}
+
+ul{
+    padding: 0 !important;
+}
+
+/* iconos del menu */
+.normalOptionIcon {
+    font-size: 40px;
+    position: relative;
+    top: 4px;
+    color: #5bc500 !important;
+}
+.logoutOptionIcon {
+    font-size: 40px;
+    position: relative;
+    top: 4px;
+    color: #ff374a !important;
+}
+.BD {
+    font-size: 40px;
+    position: relative;
+    top: 4px;
+    color: #d0a525 !important;
+}
+.svg-inline--fa.fa-w-20 {
+    font-size: 40px;
+    position: relative;
+    top: 4px;
+    color: #455de2
+}
+.svg-inline--fa.fa-w-17 {
+    font-size: 40px;
+    position: relative;
+    top: 4px;
+    color: #1e8bb4;
+}
+.service {
+    font-size: 40px;
+    position: relative;
+    top: 4px;
+    color: #c86c1f !important;
+}
+.BD {
+    font-size: 40px;
+    position: relative;
+    top: 4px;
+    color: #d0a525 !important;
+}
+.svg-inline--fa.fa-w-16 {
+    font-size: 40px !important;
+    cursor: pointer;
+    color: #460f35;
+}
+.svg-inline--fa.fa-w-18 {
+    font-size: 40px;
+    position: relative;
+    top: 2px;
+    color: #7da315;
+}
+
+
+
+/* Slider donde esta nombre y perfil del usuario navbar*/
+.slider {
+    width: 28%;
+    overflow: hidden;
+    top: 10px;
+    height: 40px;
+    color: white;
+    margin-left: 20px;
+    position: relative;
+}
+
+.slider ul {
+	display: flex;
+	padding: 0;
+	width: 400%;
+}
+
+.slider li {
+	width: 100%;
+	list-style: none;
+}
+
+.slider p{
+    font-size: 15px;
+}
+
+@keyframes cambio {
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+	
+	25% {margin-left: -100%;}
+	45% {margin-left: -100%;}
+	
+	50% {margin-left: -200%;}
+	70% {margin-left: -200%;}
+}
+
+/* icono usuario navbar */
+.userHome{
+    font-size: 40px;
+    position: relative;
+    color: #ffffff;
+    margin-left: 5px;
+}
+
+/* fecha del sistema navbar */
+.fondo-menu {
+    /* background: url(../../../assets/background.jpg) no-repeat center center;
+    background-size: cover; */
+    width: 100%;
+}
+
+.overlay-white {
+    background-color: rgba(255,255,255,0.76);
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.spanLoginUsuario{
+    color: white;
+}
+
+.spanLoginFecha{
+    position: absolute;
+    right: 10px;
+    font-size: 13px;
+    color: white;
+}
+
+.navMenu{
+    z-index: 15;
+} 
+    
+
+
+
+
+
+
+

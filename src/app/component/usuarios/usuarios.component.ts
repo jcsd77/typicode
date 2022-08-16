@@ -1,40 +1,16 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TypicodeService } from 'src/app/services/typicode.service';
+import { faPen, faTrashCan, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
-const dataUsuario: [] = [];
-
-interface Country {
+interface Usuario {
+  id: number;
   name: string;
-  flag: string;
-  area: number;
-  population: number;
+  username: string;
+  phone: string;
+  email: string;
+  website: string;
 }
-
-const COUNTRIES: Country[] = [
-  {
-    name: 'Russia',
-    flag: 'f/f3/Flag_of_Russia.svg',
-    area: 17075200,
-    population: 146989754
-  },
-  {
-    name: 'Canada',
-    flag: 'c/cf/Flag_of_Canada.svg',
-    area: 9976140,
-    population: 36624199
-  },
-  {
-    name: 'United States',
-    flag: 'a/a4/Flag_of_the_United_States.svg',
-    area: 9629091,
-    population: 324459463
-  },
-  {
-    name: 'China',
-    flag: 'f/fa/Flag_of_the_People%27s_Republic_of_China.svg',
-    area: 9596960,
-    population: 1409517397
-  }
-];
 
 @Component({
   selector: 'app-usuarios',
@@ -43,21 +19,50 @@ const COUNTRIES: Country[] = [
 })
 export class UsuariosComponent implements OnInit {
 
-  countries = COUNTRIES;
+  faPen = faPen;
+  faTrashCan = faTrashCan;
+  faMagnifyingGlass = faMagnifyingGlass; 
+  usuarios: Usuario[] = [];
 
-  constructor() { }
+  constructor(private TypicodeService: TypicodeService, private _router: Router) { }
 
   ngOnInit(): void {
-    this.test();
+    this.loadUsers();
+  }
+  loadUsers() {
+    //debugger;
+
+    this.TypicodeService.getUsers().subscribe(resp => {
+      //debugger;
+      if (resp) {
+        resp.forEach((element) => {
+          let usuarios: Usuario = {
+            id : element['id'],
+            name: element['name'],
+            username: element['username'],
+            phone: element['phone'],
+            email: element['email'],
+            website: element['website']
+          }
+          //debugger;
+
+          this.usuarios.push(usuarios);
+        });
+      }
+    })
+
+
   }
 
-  test(){
-
-    
-
-    
-
-    
+  remove(user){
+    this.TypicodeService.DeleteUser(user).subscribe(resp => {
+      if (resp) {
+        debugger;
+        this._router.navigate(["/home"]);
+      }
+    })
   }
+
+  
 
 }
